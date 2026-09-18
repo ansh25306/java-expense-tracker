@@ -2,21 +2,22 @@
 
 A console-based personal expense management application developed using Java.
 
-## Overview
+## Project Overview
 
-The Java Expense Tracker allows users to record, manage, and analyze their daily expenses.
+The Java Expense Tracker is a Java project designed to help users record, view, search, and manage their daily expenses. The project uses Object-Oriented Programming concepts and a menu-driven interface.
 
 ## Features
 
-* Add expenses
+* Add a new expense
 * View all expenses
 * Calculate total expenses
 * Search expenses by category
-* Category-wise expense summary
-* Monthly expense calculation
-* Set monthly budget
-* Budget status and warning
-* Delete expenses
+* View category-wise expense summary
+* Calculate monthly expenses
+* Set a monthly budget
+* Check budget status
+* Delete an expense
+* Exit the application
 
 ## Technologies Used
 
@@ -24,64 +25,134 @@ The Java Expense Tracker allows users to record, manage, and analyze their daily
 * Object-Oriented Programming
 * ArrayList
 * Scanner
-* Switch-case
-* Loops
 * Methods
+* Loops
+* Conditional Statements
+* Switch-Case
 
 ## Project Structure
 
 ```text
 java-expense-tracker/
-│
-├── src/
-│   ├── Expense.java
-│   └── ExpenseTracker.java
-│
-├── README.md
-└── .gitignore
+|
+|-- Expense.java
+|-- ExpenseTracker.java
+|-- README.md
 ```
+
+## Expense.java
+
+The Expense class represents an individual expense.
+
+It stores the following information:
+
+* Expense ID
+* Category
+* Amount
+* Description
+* Date
+
+## ExpenseTracker.java
+
+The ExpenseTracker class contains the main program and provides the menu-driven functionality for managing expenses.
 
 ## How to Run
 
-Compile:
+### Step 1: Install Java
+
+Make sure Java JDK is installed on your computer.
+
+Check the Java version using:
 
 ```bash
-javac src/*.java -d out
+java --version
 ```
 
-Run:
+### Step 2: Open the Project Folder
+
+Open the terminal or command prompt inside the project folder.
+
+### Step 3: Compile the Program
 
 ```bash
-java -cp out ExpenseTracker
+javac *.java
 ```
+
+### Step 4: Run the Program
+
+```bash
+java ExpenseTracker
+```
+
+## Program Menu
+
+```text
+===== EXPENSE TRACKER =====
+
+1. Add Expense
+2. View All Expenses
+3. Calculate Total Expenses
+4. Search by Category
+5. Category-wise Summary
+6. Monthly Expense
+7. Set Monthly Budget
+8. Budget Status
+9. Delete Expense
+10. Exit
+```
+
+## Concepts Practiced
+
+This project demonstrates the following Java concepts:
+
+* Classes and Objects
+* Constructors
+* Encapsulation
+* Private variables
+* Getter methods
+* ArrayList
+* Methods
+* Loops
+* If-else statements
+* Switch-case
+* User input using Scanner
+* Searching data
+* Deleting data
+* Basic calculations
+* Menu-driven programming
 
 ## Learning Outcomes
 
-This project helped me practice:
+Through this project, I gained practical experience in developing a Java console application.
 
-* Classes and objects
-* Constructors
-* Encapsulation
-* ArrayList
-* Methods
-* CRUD operations
-* Loops and conditions
-* User input handling
-* Problem solving
+The project helped me understand how to:
+
+* Create and use classes and objects
+* Organize code into multiple classes
+* Handle user input
+* Store multiple objects using ArrayList
+* Create reusable methods
+* Perform calculations
+* Search and delete data
+* Implement a menu-driven application
+* Apply Object-Oriented Programming concepts
 
 ## Future Improvements
 
-* File handling
-* Edit/update expenses
-* Login system
-* Java Swing GUI
-* MySQL database
-* Expense charts
+The project can be improved by adding:
+
+* File handling for permanent data storage
+* Edit and update expense functionality
+* User login and authentication
+* Graphical User Interface
+* MySQL database integration
+* Expense charts and graphs
+* Web or mobile application support
 
 ## Author
 
-**Ansh Tiwari**
+Ansh Tiwari
 25BAI10334
-B.Tech CSE (AI & ML)
-VIT Bhopal
+B.Tech CSE (AI and ML)
+VIT Bhopal University
 
