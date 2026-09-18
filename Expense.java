@@ -37,11 +37,12 @@ public class Expense {
     }
 
     public void display() {
-        System.out.println("ID: " + id);
-        System.out.println("Category: " + category);
-        System.out.println("Amount: ₹" + amount);
-        System.out.println("Description: " + description);
-        System.out.println("Date: " + date);
+        System.out.println("-------------------------");
+        System.out.println("ID          : " + id);
+        System.out.println("Category    : " + category);
+        System.out.println("Amount      : ₹" + amount);
+        System.out.println("Description : " + description);
+        System.out.println("Date        : " + date);
         System.out.println("-------------------------");
     }
 }
