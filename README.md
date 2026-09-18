@@ -151,8 +151,11 @@ The project can be improved by adding:
 
 ## Author
 
-*Ansh Tiwari
-*25BAI10334
-*B.Tech CSE (AI and ML)
-*VIT Bhopal University
+Ansh Tiwari
+
+25BAI10334
+
+B.Tech CSE (AI&ML)
+
+VIT Bhopal University
 
