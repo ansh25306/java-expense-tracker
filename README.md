@@ -154,7 +154,6 @@ ExpenseController/
 │
 ├── README.md
 ├── statement.md
-└── .gitignore
 ```
 
 ---
