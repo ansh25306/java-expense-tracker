@@ -13,7 +13,8 @@ public class ExpenseTracker {
 
         while (true) {
 
-            System.out.println("\n===== EXPENSE TRACKER =====");
+            System.out.println();
+            System.out.println("===== EXPENSE TRACKER =====");
             System.out.println("1. Add Expense");
             System.out.println("2. View All Expenses");
             System.out.println("3. Calculate Total Expenses");
@@ -26,8 +27,17 @@ public class ExpenseTracker {
             System.out.println("10. Exit");
 
             System.out.print("Enter your choice: ");
-            int choice = sc.nextInt();
-            sc.nextLine();
+
+            int choice;
+
+            try {
+                choice = sc.nextInt();
+                sc.nextLine();
+            } catch (Exception e) {
+                System.out.println("Please enter a valid number.");
+                sc.nextLine();
+                continue;
+            }
 
             switch (choice) {
 
@@ -69,6 +79,7 @@ public class ExpenseTracker {
 
                 case 10:
                     System.out.println("Thank you for using Expense Tracker.");
+                    sc.close();
                     return;
 
                 default:
@@ -82,9 +93,27 @@ public class ExpenseTracker {
         System.out.print("Enter category: ");
         String category = sc.nextLine();
 
-        System.out.print("Enter amount: ");
-        double amount = sc.nextDouble();
-        sc.nextLine();
+        double amount;
+
+        while (true) {
+            System.out.print("Enter amount: ");
+
+            try {
+                amount = sc.nextDouble();
+                sc.nextLine();
+
+                if (amount <= 0) {
+                    System.out.println("Amount must be greater than 0.");
+                    continue;
+                }
+
+                break;
+
+            } catch (Exception e) {
+                System.out.println("Please enter a valid amount.");
+                sc.nextLine();
+            }
+        }
 
         System.out.print("Enter description: ");
         String description = sc.nextLine();
@@ -113,7 +142,8 @@ public class ExpenseTracker {
             return;
         }
 
-        System.out.println("\n===== ALL EXPENSES =====");
+        System.out.println();
+        System.out.println("===== ALL EXPENSES =====");
 
         for (Expense expense : expenses) {
             expense.display();
@@ -169,7 +199,8 @@ public class ExpenseTracker {
             }
         }
 
-        System.out.println("\n===== CATEGORY SUMMARY =====");
+        System.out.println();
+        System.out.println("===== CATEGORY SUMMARY =====");
 
         for (String category : categories) {
 
@@ -209,9 +240,33 @@ public class ExpenseTracker {
 
     static void setBudget() {
 
-        System.out.print("Enter monthly budget: ");
-        monthlyBudget = sc.nextDouble();
-        sc.nextLine();
+        while (true) {
+
+            System.out.print("Enter monthly budget: ");
+
+            try {
+
+                monthlyBudget = sc.nextDouble();
+                sc.nextLine();
+
+                if (monthlyBudget <= 0) {
+                    System.out.println(
+                            "Budget must be greater than 0."
+                    );
+                    continue;
+                }
+
+                break;
+
+            } catch (Exception e) {
+
+                System.out.println(
+                        "Please enter a valid amount."
+                );
+
+                sc.nextLine();
+            }
+        }
 
         System.out.println(
                 "Monthly budget set to ₹" + monthlyBudget
@@ -221,7 +276,11 @@ public class ExpenseTracker {
     static void budgetStatus() {
 
         if (monthlyBudget == 0) {
-            System.out.println("Please set a monthly budget first.");
+
+            System.out.println(
+                    "Please set a monthly budget first."
+            );
+
             return;
         }
 
@@ -231,24 +290,51 @@ public class ExpenseTracker {
             total += expense.getAmount();
         }
 
-        System.out.println("Monthly Budget: ₹" + monthlyBudget);
-        System.out.println("Total Expenses: ₹" + total);
-        System.out.println(
-                "Remaining Budget: ₹" + (monthlyBudget - total)
-        );
+        double remaining = monthlyBudget - total;
+
+        System.out.println();
+        System.out.println("===== BUDGET STATUS =====");
+        System.out.println("Monthly Budget : ₹" + monthlyBudget);
+        System.out.println("Total Expenses : ₹" + total);
+        System.out.println("Remaining      : ₹" + remaining);
 
         if (total > monthlyBudget) {
-            System.out.println("You have exceeded your budget.");
+
+            System.out.println(
+                    "You have exceeded your budget."
+            );
+
         } else {
-            System.out.println("You are within your budget.");
+
+            System.out.println(
+                    "You are within your budget."
+            );
         }
     }
 
     static void deleteExpense() {
 
+        if (expenses.isEmpty()) {
+
+            System.out.println("No expenses to delete.");
+            return;
+        }
+
         System.out.print("Enter expense ID to delete: ");
-        int id = sc.nextInt();
-        sc.nextLine();
+
+        int id;
+
+        try {
+
+            id = sc.nextInt();
+            sc.nextLine();
+
+        } catch (Exception e) {
+
+            System.out.println("Invalid ID.");
+            sc.nextLine();
+            return;
+        }
 
         boolean found = false;
 
@@ -258,7 +344,9 @@ public class ExpenseTracker {
 
                 expenses.remove(i);
 
-                System.out.println("Expense deleted successfully.");
+                System.out.println(
+                        "Expense deleted successfully."
+                );
 
                 found = true;
                 break;
