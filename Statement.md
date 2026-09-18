@@ -145,17 +145,6 @@ Users can delete an existing expense from the expense list.
 
 ---
 
-## 8. CRUD Operations
-
-The project demonstrates basic CRUD operations for expense management.
-
-* **Create:** Add a new expense.
-* **Read:** View and search recorded expenses.
-* **Update:** Planned as a future improvement.
-* **Delete:** Remove an existing expense.
-
----
-
 ## 9. Expected Outcome
 
 The expected outcome of the project is a simple and functional expense tracking application.
