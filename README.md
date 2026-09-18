@@ -1,4 +1,4 @@
-# Expense Controller
+# Java-Expense-Tracker
 
 A Java-based personal expense management system that helps users track daily expenses, manage income and budgets, and analyze spending habits.
 
